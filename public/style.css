@@ -1,7 +1,4 @@
 /**
- * AI GLOBAL NETWORKS - ENHANCED STYLESHEET
- * Completely redesigned with fixed mobile navigation
- * Bold, modern, production-ready
  * Color Scheme: Black, Orange, White
  */
 
@@ -306,7 +303,7 @@ button {
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1rem;
 }
 
 .nav-link {

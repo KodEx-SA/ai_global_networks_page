@@ -1,9 +1,3 @@
-/**
- * AI GLOBAL NETWORKS - ENHANCED JAVASCRIPT
- * Clean, modern, fully functional mobile navigation
- * Production-ready with smooth animations
- */
-
 (function () {
     'use strict';
 

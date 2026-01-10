@@ -1,8 +1,3 @@
-/**
- * AI Global Networks - Backend Server
- * Clean, modular, maintainable Express server with Groq API integration
- */
-
 const express = require('express');
 const cors = require('cors');
 const path = require('path');

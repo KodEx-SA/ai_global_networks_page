@@ -1,6 +1,4 @@
 /**
- * AI Global Networks - Chatbot Application
- * Clean, modular, maintainable architecture
  * Works with both Node.js server and Live Server
  * UPDATED: Using current Groq models (Jan 2026)
  */
