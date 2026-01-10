@@ -2,292 +2,508 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Global Networks - Full Landing Page</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="AI Global Networks - Transform your business with AI automation. Smart solutions for modern enterprises.">
+  <title>AI Global Networks - Intelligent Automation Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <div class="logo"><span></span>AI Global Networks</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Learn AI</a></li>
-        <li><a href="#">Nuvion AI</a></li>
-        <li><a href="#">Woman in AI</a></li>
-        <li><a href="#">Book with Us!</a></li>
-      </ul>
-    </nav>
-    <button class="nav-btn" onclick="openBooking()">Get Started</button>
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-wrapper">
+        <a href="#home" class="logo">
+          <div class="logo-icon">
+            <div class="logo-dot"></div>
+            <div class="logo-ring"></div>
+          </div>
+          <span class="logo-text">AI<span class="logo-separator">|</span>Global</span>
+        </a>
+
+        <nav class="nav" id="navMenu">
+          <ul class="nav-list">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#features" class="nav-link">Features</a></li>
+            <li><a href="#industries" class="nav-link">Industries</a></li>
+            <li><a href="#solutions" class="nav-link">Solutions</a></li>
+            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions-mobile">
+            <a href="chatbot.html" class="btn btn-secondary">AI Assistant</a>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Get Started</button>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <a href="chatbot.html" class="btn btn-secondary">AI Assistant</a>
+          <button class="btn btn-primary" onclick="scrollToSection('contact')">Get Started</button>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <!-- Floating Chat Button -->
-  <a href="chatbot.html" class="floating-chat-btn" title="Chat with AI">
-    <span class="chat-icon">💬</span>
-    <span class="chat-text">AI Chat</span>
-  </a>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="grid-pattern"></div>
+      <div class="gradient-sphere sphere-1"></div>
+      <div class="gradient-sphere sphere-2"></div>
+      <div class="gradient-sphere sphere-3"></div>
+    </div>
 
-  <section class="hero">
-    <h1>Start Your AI Automation Journey Today</h1>
-    <p>Sign up for AI Global Networks and let AI handle your routine tasks—no credit card needed.</p>
-    <div class="hero-buttons">
-      <button>Get Started - Free</button>
-      <button>View Pricing</button>
-    </div>
-  </section>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-pulse"></span>
+          <span class="badge-text">AI-POWERED AUTOMATION</span>
+        </div>
 
-  <section class="features">
-    <div class="feature">
-      <h3>Smart Automation</h3>
-      <p>Leverage AI to automate repetitive tasks seamlessly and improve efficiency.</p>
-    </div>
-    <div class="feature">
-      <h3>Integrations</h3>
-      <p>Connect with your favorite apps and services for smooth workflows.</p>
-    </div>
-    <div class="feature">
-      <h3>Custom Solutions</h3>
-      <p>Personalize AI tools to suit your business goals and productivity needs.</p>
-    </div>
-    <div class="feature">
-      <h3>24/7 Support</h3>
-      <p>Our team is available around the clock to assist with any inquiries.</p>
-    </div>
-  </section>
+        <h1 class="hero-title">
+          Transform your Business with
+          <span class="title-highlight">Intelligent AI</span>
+        </h1>
 
-  <div class="industries">
-    <div class="industry-card">
-      <img src="customer-service.png" alt="Customer Support" />
-      <p>Customer Support</p>
-    </div>
-    <div class="industry-card">
-      <img src="hospital.png" alt="Healthcare" />
-      <p>Healthcare</p>
-    </div>
-    <div class="industry-card">
-      <img src="marketing.png" alt="Marketing" />
-      <p>Marketing</p>
-    </div>
-    <div class="industry-card">
-      <img src="education.png" alt="Education" />
-      <p>Education</p>
-    </div>
-    <div class="industry-card">
-      <img src="salary.png" alt="Finance" />
-      <p>Finance</p>
-    </div>
-  </div>
-
-  <section class="skills-apps">
-    <div class="skills">
-      <h2>SKILLS DEVELOPMENT</h2>
-      <ul>
-        <li>Cybersecurity</li>
-        <li>Data Science</li>
-        <li>Software Development</li>
-        <li>Design Thinking</li>
-      </ul>
-    </div>
-    <div class="apps">
-      <h2>OUR APPS</h2>
-      <ul>
-        <li>Sensi Sezuire</li>
-        <li>Block Spy</li>
-        <li>Ubizo iMarket</li>
-        <li>Woman in AI</li>
-        <li>Ethical AI</li>
-        <li>24/7 Property Hunter</li>
-        <li>and many more...</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="success-stories">
-    <span>SUCCESS STORIES</span>
-    <h2>See how customers transformed with AI Global Networks</h2>
-    <div class="stories-container">
-      <div class="story">
-        <p>"AI Global Networks helped automate 90% of our marketing workflows — now we close deals faster than ever."
+        <p class="hero-description">
+          Automate workflows, integrate seamlessly, and scale effortlessly with cutting-edge AI solutions.
+          Join 10,000+ leading enterprises in the AI revolution.
         </p>
-        <h3>- Alex R., Growth Lead</h3>
+
+        <div class="hero-cta">
+          <button class="btn btn-hero-primary" onclick="window.location.href='chatbot.html'">
+            <span>Start Free Trial</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" />
+            </svg>
+          </button>
+          <button class="btn btn-hero-outline" onclick="scrollToSection('contact')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+              <path d="M10 8L14 12L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <span>Watch Demo</span>
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number" data-target="10000">0</div>
+            <div class="stat-label">Active Users</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="98">0</div>
+            <div class="stat-label">Success Rate</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-label">Integrations</div>
+          </div>
+        </div>
       </div>
-      <div class="story">
-        <p>"The seamless integrations saved us countless hours of manual work each week."</p>
-        <h3>- Maria D., Operations Manager</h3>
-      </div>
-      <div class="story">
-        <p>"Thanks to AI Global Networks, our small team achieved enterprise-level efficiency without extra hires."</p>
-        <h3>- Chris L., Startup Founder</h3>
-      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll</span>
     </div>
   </section>
 
-  <div class="app-container">
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <div class="traffic-lights">
-          <span></span><span></span><span></span>
-        </div>
-        <h2>AI Global Networks</h2>
-      </div>
-      <button class="new-chat-btn">✦ New Chat</button>
-      <nav class="menu">
-        <a href="#">Email Outreach</a>
-        <a href="#">Customer Follow-Up</a>
-        <a href="#">Data Analysis</a>
-        <a href="#">Meeting Scheduler</a>
-      </nav>
-      <div class="sidebar-footer">
-        <a href="#">My account</a>
-        <a href="#">Light mode</a>
-        <a href="#">Log out</a>
-      </div>
-    </aside>
-
-    <main class="chat-area">
-      <div class="chat-bubble bot">
-        <img src="icon-bot.png" class="bot-icon" />
-        <p>Hey Mark – Done compiled 60 leads and emailed the list to you. Ready for your outreach!</p>
-      </div>
-      <div class="chat-bubble user">
-        <p>That's awesome, thanks!</p>
-        <img src="avatar-user.png" class="user-icon" />
-      </div>
-      <div class="chat-bubble bot">
-        <img src="icon-bot.png" class="bot-icon" />
-        <p>Want me to draft a quick template for your outreach?</p>
-      </div>
-      <div class="chat-bubble user">
-        <p>Yes please that'd be a huge help!</p>
-        <img src="avatar-user.png" class="user-icon" />
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FEATURES</span>
+        <h2 class="section-title">Powerful AI Capabilities</h2>
+        <p class="section-subtitle">Everything you need to automate and scale your operations</p>
       </div>
 
-      <div class="chat-input-wrapper">
-        <div class="input-header">
-          <select>
-            <option>GPT 4.5</option>
-          </select>
-          <button class="icon-btn">⚙</button>
-          <button class="icon-btn">🌐</button>
+      <div class="features-grid">
+        <div class="feature-card" data-index="1">
+          <div class="feature-number">01</div>
+          <div class="feature-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Smart Automation</h3>
+          <p class="feature-description">AI-powered workflows that learn and adapt to your business needs, automating
+            repetitive tasks with precision.</p>
         </div>
-        <textarea placeholder="Schedule meetings and send invites automatically"></textarea>
-        <div class="input-actions">
-          <button class="tag">Chat</button>
-          <button class="tag">Launch Workflow</button>
-          <button class="tag">Data Analysis</button>
-          <button class="send-btn">✦ Send</button>
-        </div>
-      </div>
-    </main>
-  </div>
 
-  <section class="three-steps">
-    <span>AI-DRIVEN FEATURES</span>
-    <h2>Automate workflows in three simple steps</h2>
-    <div class="steps-container">
-      <div class="step">
-        <img src="assets/images/calendar.png" width="300" height="200" alt="Step 1" />
-        <h3>1. Select a trigger</h3>
-        <p>Choose an event or schedule that kicks off your workflow.</p>
-      </div>
-      <div class="step">
-        <img src="apps.png" alt="Step 2" />
-        <h3>2. Connect your apps</h3>
-        <p>Sync AI Global Networks with your tools—CRM, email, Slack, and more.</p>
-      </div>
-      <div class="step">
-        <img src="aipic.png" alt="Step 3" />
-        <h3>3. Let AI do the work</h3>
-        <p>Let AI Global Networks execute tasks automatically.</p>
-      </div>
-    </div>
-  </section>
+        <div class="feature-card" data-index="2">
+          <div class="feature-number">02</div>
+          <div class="feature-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+              <path
+                d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Seamless Integration</h3>
+          <p class="feature-description">Connect with 50+ apps and services including Slack, HubSpot, Salesforce, and
+            more with zero friction.</p>
+        </div>
 
-  <section class="faq">
-    <div class="faq-left">
-      <span
-        style="background:rgba(255,255,255,0.1);color:#fff;font-size:.8rem;padding:4px 10px;border-radius:8px;">FAQ</span>
-      <h2>Frequently asked questions</h2>
-      <p><strong>Got any Questions?</strong><br>Let us know! Reach out and our team will get right back to you.</p>
-      <button>Contact us</button>
-    </div>
-    <div class="faq-right">
-      <div class="accordion">
-        <div class="accordion-item">
-          <div class="accordion-header">What is AI Global Networks and how does it work? <span>+</span></div>
-          <div class="accordion-content">AI Global Networks automates your daily workflows using advanced machine
-            learning models.</div>
+        <div class="feature-card" data-index="3">
+          <div class="feature-number">03</div>
+          <div class="feature-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Custom Solutions</h3>
+          <p class="feature-description">Tailored AI models and workflows designed specifically to achieve your unique
+            business goals.</p>
         </div>
-        <div class="accordion-item">
-          <div class="accordion-header active">Which apps can I integrate? <span>-</span></div>
-          <div class="accordion-content active">AI Global Networks supports 50+ integrations, including Slack, HubSpot,
-            Zendesk, Salesforce, Google Workspace, WhatsApp, Zapier, and more.</div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header">How does AI Global Networks automate tasks? <span>+</span></div>
-          <div class="accordion-content">AI Global Networks uses triggers and actions to handle routine workflows
-            automatically across systems.</div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header">Is my data secure with AI Global Networks? <span>+</span></div>
-          <div class="accordion-content">Yes, AI Global Networks ensures your data is encrypted and protected with
-            enterprise-grade security.</div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header">What kind of support do you offer? <span>+</span></div>
-          <div class="accordion-content">Our team offers 24/7 support to assist with setup, integrations, and
-            troubleshooting.</div>
+
+        <div class="feature-card" data-index="4">
+          <div class="feature-number">04</div>
+          <div class="feature-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor" stroke-width="2" />
+              <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="feature-title">24/7 Support</h3>
+          <p class="feature-description">Round-the-clock expert assistance ensuring your operations never skip a beat,
+            anytime you need it.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-top">
-      <div class="footer-brand">
-        <h2>AI Global Networks</h2>
-        <p>AI Global Networks and let AI handle your routine tasks.</p>
+  <!-- Industries Section -->
+  <section class="industries" id="industries">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">INDUSTRIES</span>
+        <h2 class="section-title">Trusted Across Industries</h2>
+        <p class="section-subtitle">From startups to enterprises, we power AI transformation</p>
       </div>
-      <div class="footer-columns">
-        <div class="footer-column">
-          <h4>Main Page</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+
+      <div class="industries-grid">
+        <div class="industry-card">
+          <div class="industry-icon">💬</div>
+          <h3>Customer Support</h3>
+          <p>AI chatbots & ticket automation</p>
         </div>
-        <div class="footer-column">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#">Integration</a></li>
-            <li><a href="#">Teams</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">404</a></li>
-          </ul>
+
+        <div class="industry-card">
+          <div class="industry-icon">⚕️</div>
+          <h3>Healthcare</h3>
+          <p>Patient management systems</p>
         </div>
-        <div class="footer-column">
-          <h4>Others</h4>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Condition</a></li>
-            <li><a href="#">Waitlist</a></li>
-            <li><a href="#">Changelog</a></li>
-          </ul>
+
+        <div class="industry-card">
+          <div class="industry-icon">📊</div>
+          <h3>Marketing</h3>
+          <p>Campaign optimization & analytics</p>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-icon">🎓</div>
+          <h3>Education</h3>
+          <p>Personalized learning paths</p>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-icon">💰</div>
+          <h3>Finance</h3>
+          <p>Fraud detection & reporting</p>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-icon">🏭</div>
+          <h3>Manufacturing</h3>
+          <p>Process optimization & QA</p>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Design & Developed by Thando Ndlovu & Ashley K Motsie</p>
+  </section>
+
+  <!-- Solutions Section -->
+  <section class="solutions" id="solutions">
+    <div class="container">
+      <div class="solutions-wrapper">
+        <div class="solutions-content">
+          <span class="section-tag">OUR APPLICATIONS</span>
+          <h2 class="section-title">Comprehensive AI Ecosystem</h2>
+          <p class="solutions-intro">Built on cutting-edge technology to deliver exceptional results across all business
+            verticals.</p>
+
+          <div class="solutions-list">
+            <div class="solution-category">
+              <h4 class="solution-category-title">Development Skills</h4>
+              <ul class="solution-items">
+                <li><span class="solution-bullet"></span>Cybersecurity Training</li>
+                <li><span class="solution-bullet"></span>Data Science Bootcamps</li>
+                <li><span class="solution-bullet"></span>Software Development</li>
+                <li><span class="solution-bullet"></span>Design Thinking</li>
+              </ul>
+            </div>
+
+            <div class="solution-category">
+              <h4 class="solution-category-title">AI Applications</h4>
+              <ul class="solution-items">
+                <li><span class="solution-bullet"></span>Sensi Sezuire - Security AI</li>
+                <li><span class="solution-bullet"></span>Block Spy - Blockchain Intel</li>
+                <li><span class="solution-bullet"></span>Ubizo iMarket - Smart Commerce</li>
+                <li><span class="solution-bullet"></span>Woman in AI - Empowerment</li>
+                <li><span class="solution-bullet"></span>Ethical AI - Responsible Tech</li>
+                <li><span class="solution-bullet"></span>24/7 Property Hunter</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="solutions-visual">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <span class="terminal-button red"></span>
+                <span class="terminal-button yellow"></span>
+                <span class="terminal-button green"></span>
+              </div>
+              <span class="terminal-title">ai_automation.js</span>
+            </div>
+            <div class="terminal-body">
+              <div class="code-line">
+                <span class="code-keyword">import</span> <span class="code-variable">AI</span> <span
+                  class="code-keyword">from</span> <span class="code-string">'@ai-global/core'</span><span
+                  class="code-punctuation">;</span>
+              </div>
+              <div class="code-line">
+                <span class="code-keyword">const</span> <span class="code-variable">automation</span> <span
+                  class="code-operator">=</span> <span class="code-function">AI</span><span
+                  class="code-punctuation">.</span><span class="code-function">init</span><span
+                  class="code-punctuation">(</span><span class="code-punctuation">)</span><span
+                  class="code-punctuation">;</span>
+              </div>
+              <div class="code-line">
+                <span class="code-keyword">await</span> <span class="code-variable">automation</span><span
+                  class="code-punctuation">.</span><span class="code-function">learn</span><span
+                  class="code-punctuation">(</span><span class="code-variable">data</span><span
+                  class="code-punctuation">)</span><span class="code-punctuation">;</span>
+              </div>
+              <div class="code-line">
+                <span class="code-keyword">const</span> <span class="code-variable">result</span> <span
+                  class="code-operator">=</span> <span class="code-keyword">await</span> <span
+                  class="code-variable">automation</span><span class="code-punctuation">.</span><span
+                  class="code-function">execute</span><span class="code-punctuation">(</span><span
+                  class="code-punctuation">)</span><span class="code-punctuation">;</span>
+              </div>
+              <div class="code-line"></div>
+              <div class="code-line">
+                <span class="code-comment">// Performance: 98% efficiency ⚡</span>
+              </div>
+              <div class="code-line">
+                <span class="code-comment">// Uptime: 99.9% reliability 🚀</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">SUCCESS STORIES</span>
+        <h2 class="section-title">Loved by Teams Worldwide</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "AI Global Networks helped automate 90% of our marketing workflows. We now close deals faster than ever
+            before. Truly transformative."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AR</div>
+            <div class="author-info">
+              <h4>Alex Rodriguez</h4>
+              <p>Growth Lead, TechCorp</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "The seamless integrations saved us countless hours of manual work each week. Absolute game changer for our
+            team's productivity."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MD</div>
+            <div class="author-info">
+              <h4>Maria Daniels</h4>
+              <p>Operations Manager, StartupX</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Our small team achieved enterprise-level efficiency without extra hires. Simply amazing results that
+            exceeded expectations."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">CL</div>
+            <div class="author-info">
+              <h4>Chris Lee</h4>
+              <p>Founder, Innovation Labs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Transform Your Business?</h2>
+        <p class="cta-subtitle">Join 10,000+ companies already using AI Global Networks to scale their operations</p>
+        <div class="cta-buttons">
+          <button class="btn btn-cta-primary" onclick="window.location.href='chatbot.html'">Get Started Free</button>
+          <button class="btn btn-cta-outline" onclick="window.location.href='chatbot.html'">Schedule Demo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">
+              <div class="logo-dot"></div>
+              <div class="logo-ring"></div>
+            </div>
+            <span class="logo-text">AI<span class="logo-separator">|</span>Global</span>
+          </div>
+          <p class="footer-description">Empowering businesses worldwide with intelligent automation solutions that drive
+            growth and efficiency.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#industries">Industries</a></li>
+              <li><a href="#solutions">Solutions</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Status</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Global Networks. Designed & Developed by Thando Ndlovu & Ashley K Motsie</p>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Floating Chat Button -->
+  <a href="chatbot.html" class="floating-chat" aria-label="Open AI Chat">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+    <span class="chat-pulse"></span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
 </body>
 
 </html>
