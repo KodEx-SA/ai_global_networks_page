@@ -1,14 +1,9 @@
-/**
- * Works with both Node.js server and Live Server
- * UPDATED: Using current Groq models (Jan 2026)
- */
-
 // ==================== CONFIGURATION ====================
 const CONFIG = {
   // Smart API endpoint detection
   API_ENDPOINT: window.location.port === '5500'
-    ? 'http://localhost:3000/api/chat'    // Live Server → Full URL
-    : '/api/chat',                         // Node.js Server → Relative URL
+    ? 'http://localhost:3000/api/chat'
+    : '/api/chat',
 
   HEALTH_ENDPOINT: window.location.port === '5500'
     ? 'http://localhost:3000/api/health'
@@ -16,7 +11,7 @@ const CONFIG = {
 
   MAX_CHAT_HISTORY: 100,
   AUTO_SAVE: true,
-  DEFAULT_MODEL: 'llama-3.3-70b-versatile',  // UPDATED: Current model
+  DEFAULT_MODEL: 'llama-3.3-70b-versatile',
   DEFAULT_TEMPERATURE: 0.7,
   DEFAULT_STREAM: true,
   MAX_MESSAGE_LENGTH: 4000,
@@ -391,34 +386,48 @@ class ChatApp {
       const contentDiv = messageDiv.querySelector('.message-content');
 
       let fullResponse = '';
+      let buffer = ''; // CRITICAL FIX: Buffer for incomplete chunks
       const reader = response.body.getReader();
-      const decoder = new TextDecoder();
+      const decoder = new TextDecoder('utf-8'); // Explicit UTF-8
 
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
 
+        // Decode chunk and add to buffer
         const chunk = decoder.decode(value, { stream: true });
-        const lines = chunk.split('\n');
+        buffer += chunk;
+
+        // Split by newlines
+        const lines = buffer.split('\n');
+
+        buffer = lines.pop() || '';
 
         for (const line of lines) {
-          if (line.startsWith('data: ')) {
-            const data = line.slice(6);
-            if (data === '[DONE]') continue;
+          const trimmed = line.trim();
+
+          // Skip empty lines and [DONE] marker
+          if (!trimmed || trimmed === 'data: [DONE]') continue;
+
+          if (trimmed.startsWith('data: ')) {
+            const jsonStr = trimmed.slice(6); // Remove 'data: ' prefix
 
             try {
-              const parsed = JSON.parse(data);
+              const parsed = JSON.parse(jsonStr);
               const content = parsed.choices[0]?.delta?.content || '';
 
               if (content) {
                 fullResponse += content;
+
+                // Update UI in real-time
                 contentDiv.innerHTML = MessageFormatter.format(fullResponse);
                 MessageFormatter.highlightCode(contentDiv);
                 MessageFormatter.addCopyButtons(contentDiv);
                 this.scrollToBottom();
               }
-            } catch (e) {
-              // Ignore parse errors
+            } catch (parseError) {
+              // Skip invalid JSON (incomplete chunks)
+              console.debug('Skipping invalid JSON:', jsonStr.substring(0, 50));
             }
           }
         }
