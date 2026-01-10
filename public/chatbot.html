@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Global Networks - Intelligence Hub</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Markdown Parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <button class="icon-btn sidebar-collapse" id="sidebarCollapseBtn" title="Close sidebar">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 5H11M3 12H16M3 19H11" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- New Chat Button -->
+            <button class="new-chat-btn" id="newChatBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M8 12H16M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <span>New chat</span>
+            </button>
+
+            <!-- Search Chats -->
+            <div class="search-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" />
+                    <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <input type="text" placeholder="Search chats" id="searchChats">
+            </div>
+
+            <!-- Chat History -->
+            <div class="chat-history" id="chatHistory">
+                <div class="history-section">
+                    <h3>Your chats</h3>
+                    <div class="history-list" id="historyList">
+                        <!-- Chat items will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+                <button class="sidebar-footer-btn" id="userMenuBtn">
+                    <div class="user-avatar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" />
+                            <path d="M6 21V19C6 16.7909 7.79086 15 10 15H14C16.2091 15 18 16.7909 18 19V21"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <span>AI Global Networks</span>
+                    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 5H11M3 12H16M3 19H11" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    <div class="model-selector" id="modelSelector">
+                        <span id="currentModel">Models</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="icon-btn" id="shareBtn" title="Share">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path
+                                d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path
+                                d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path d="M8.59 13.51L15.42 17.49M15.41 6.51L8.59 10.49" stroke="currentColor"
+                                stroke-width="2" />
+                        </svg>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Messages Container -->
+            <div class="messages-wrapper">
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Welcome Screen -->
+                    <div class="welcome-screen" id="welcomeScreen">
+                        <h1>What can I help with?</h1>
+                    </div>
+                    <!-- Messages will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Input Area (Fixed at bottom) -->
+            <div class="input-wrapper">
+                <div class="input-container">
+                    <div class="input-actions-left">
+                        <button class="icon-btn" id="attachBtn" title="Attach files">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M21.44 11.05L12.25 20.24C11.1242 21.3658 9.59723 21.9983 8.005 21.9983C6.41277 21.9983 4.88581 21.3658 3.76 20.24C2.63419 19.1142 2.00166 17.5872 2.00166 15.995C2.00166 14.4028 2.63419 12.8758 3.76 11.75L12.33 3.18C13.0806 2.42943 14.0924 2.00801 15.145 2.00801C16.1976 2.00801 17.2094 2.42943 17.96 3.18C18.7106 3.93057 19.132 4.94238 19.132 5.995C19.132 7.04762 18.7106 8.05943 17.96 8.81L9.38 17.38C8.9997 17.7603 8.48944 17.9719 7.96 17.9719C7.43056 17.9719 6.9203 17.7603 6.54 17.38C6.1597 16.9997 5.94806 16.4894 5.94806 15.96C5.94806 15.4306 6.1597 14.9203 6.54 14.54L14.54 6.54"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                        <input type="file" id="fileInput" hidden accept=".txt,.pdf,.doc,.docx,.jpg,.jpeg,.png">
+                    </div>
+
+                    <textarea id="messageInput" placeholder="Ask anything..." rows="1" maxlength="4000"></textarea>
+
+                    <div class="input-actions-right">
+                        <button class="icon-btn send-btn" id="sendBtn" disabled>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 8L11 13" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-footer">
+                    <p>Intelli Hub can make mistakes. Check important info.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Model Selection Modal -->
+    <div class="modal" id="modelModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Select Model</h2>
+                <button class="icon-btn" id="closeModelModal">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="model-option" data-model="llama-3.3-70b-versatile">
+                    <div class="model-info">
+                        <h3>Llama 3.3 70B</h3>
+                        <p>Most capable model, best for complex tasks</p>
+                    </div>
+                    <div class="model-badge">Recommended</div>
+                </div>
+                <div class="model-option" data-model="llama-3.3-70b-specdec">
+                    <div class="model-info">
+                        <h3>Llama 3.3 70B Turbo</h3>
+                        <p>Fastest 70B model with speculative decoding</p>
+                    </div>
+                    <div class="model-badge">Fast</div>
+                </div>
+                <div class="model-option" data-model="llama-3.1-8b-instant">
+                    <div class="model-info">
+                        <h3>Llama 3.1 8B</h3>
+                        <p>Ultra-fast responses, good for simple queries</p>
+                    </div>
+                    <div class="model-badge">Fastest</div>
+                </div>
+                <div class="model-option" data-model="mixtral-8x7b-32768">
+                    <div class="model-info">
+                        <h3>Mixtral 8x7B</h3>
+                        <p>Balanced performance with long context</p>
+                    </div>
+                </div>
+                <div class="model-option" data-model="gemma2-9b-it">
+                    <div class="model-info">
+                        <h3>Gemma 2 9B</h3>
+                        <p>Efficient and versatile</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <label class="setting-row">
+                    <span>Temperature</span>
+                    <div class="slider-container">
+                        <input type="range" id="temperatureSlider" min="0" max="2" step="0.1" value="0.7">
+                        <span id="temperatureValue">0.7</span>
+                    </div>
+                </label>
+                <label class="setting-row">
+                    <span>Enable Streaming</span>
+                    <input type="checkbox" id="streamToggle" checked class="toggle">
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Menu Modal -->
+    <div class="modal" id="userModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content small">
+            <div class="menu-list">
+                <button class="menu-item" id="settingsBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                        <path
+                            d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <span>Settings</span>
+                </button>
+                <button class="menu-item" id="exportBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M21 15V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V15M17 8L12 3M12 3L7 8M12 3V15"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <span>Export chats</span>
+                </button>
+                <button class="menu-item" id="clearAllBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M3 6H5H21M19 6V20C19 21.1046 18.1046 22 17 22H7C5.89543 22 5 21.1046 5 20V6M8 6V4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4V6"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <span>Clear all chats</span>
+                </button>
+                <div class="menu-divider"></div>
+                <a href="index.html" class="menu-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 9L12 2L21 9V20C21 21.1046 20.1046 22 19 22H5C3.89543 22 3 21.1046 3 20V9Z"
+                            stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    <span>Back to home</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Script -->
+    <script src="chatbot.js"></script>
+</body>
+
+</html>
