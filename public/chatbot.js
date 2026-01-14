@@ -13,7 +13,7 @@ const CONFIG = {
   AUTO_SAVE: true,
   DEFAULT_MODEL: 'llama-3.3-70b-versatile',
   DEFAULT_TEMPERATURE: 0.7,
-  DEFAULT_STREAM: true,
+  DEFAULT_STREAM: false,
   MAX_MESSAGE_LENGTH: 4000,
 };
 
@@ -347,11 +347,7 @@ class ChatApp {
     try {
       this.abortController = new AbortController();
 
-      if (this.settings.stream) {
-        await this.streamResponse();
-      } else {
-        await this.fetchResponse();
-      }
+      await this.fetchResponse();
 
       if (CONFIG.AUTO_SAVE) {
         this.saveChat();
